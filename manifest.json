@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Liquipedia.net to VLR.gg switcher",
+  "version": "1.0",
+  "description": "Switch between Liquipedia and VLR.gg for VALORANT eSports.",
+  "permissions": ["tabs"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+        "matches": [
+            "*://liquipedia.net/*",
+            "*://vlr.gg/*"
+        ],
+        "js": ["contentScript.js"]
+    }
+]
+}
